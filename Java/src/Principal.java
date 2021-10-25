@@ -44,18 +44,24 @@ public class Principal {
                         String color = scanner.next();
 
                         var nuevoVehiculo = new Vehiculo(modelo, marca, valorComercial, color);
+                        Vehiculo.vehiculos[Vehiculo.posAnadir] = nuevoVehiculo;
+                        Vehiculo.setPosAnadir();
                     }else{
                         System.out.println("Error base de datos llena");
                     }
                     break;
 
-                case 2: Vehiculo.toStringVehiculos();
+                case 2:
+                    System.out.println(Vehiculo.toStringVehiculos());
                     break;
-                case 3: Vehiculo.cantidadVehiculos();
+                case 3:
+                    System.out.println(Vehiculo.cantidadVehiculos());
                     break;
-                case 4: Vehiculo.getVerdes();
+                case 4:
+                    System.out.println(Vehiculo.getVerdes());
                     break;
-                case 5: Vehiculo.getNuevos();
+                case 5:
+                    System.out.println(Vehiculo.getNuevos());
                     break;
                 case 6:
                     if(Sensor.posAnadir < Sensor.Sensores.length - 1 ){
@@ -66,22 +72,26 @@ public class Principal {
                         double valor = scanner.nextDouble();
 
                         var nuevoSensor = new Sensor(tipo, valor);
+                        Sensor.Sensores[Sensor.posAnadir] = nuevoSensor;
+                        Sensor.setPosAnadir();
                     }else{
                         System.out.println("Error base de datos llena");
                     }
                     break;
-                case 7: Sensor.toStringSensores();
+                case 7:
+                    System.out.println(Sensor.toStringSensores());
                     break;
-                case 8: Sensor.cantidadSensores();
+                case 8:
+                    System.out.println(Sensor.cantidadSensores());
                     break;
-                case 9: Sensor.getTipoTemperatura();
+                case 9:
+                    System.out.println(Sensor.getTipoTemperatura());
                     break;
-                case 666: ArrayList<Sensor> sensores =  Sensor.get666();
-                          Sensor.toStringSensores666(sensores);
+                case 666:
+                    Sensor[] sensores =  Sensor.get666();
+                    System.out.println(Sensor.toStringSensores666(sensores));
 
             }
         }
     }
-
-
 }

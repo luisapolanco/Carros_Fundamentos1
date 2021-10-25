@@ -15,7 +15,6 @@ public class Sensor {
     public Sensor(String tipo, double valor) {
         this.tipo = tipo;
         this.valor = valor;
-        Sensores[posAnadir] = this;
     }
 
     public String getTipo() {
@@ -59,53 +58,68 @@ public class Sensor {
     }
 
     public String toString(){
-        String texto = "Tipo: " + this.getTipo() + " Valor: " + this.getValor();
+        String texto = "------ Tipo: " + this.getTipo() + " Valor: " + this.getValor();
         return texto;
     }
 
     public static String toStringSensores(){
         String texto = "";
-        for(int i = 0; i < Sensores.length; i++){
-            String mensaje = " ----- Tipo: " + Sensores[i].getTipo() + " Valor: " + Sensores[i].getValor();
+        for(int i = 0; i < posAnadir; i++){
+            String mensaje = " ----- Tipo: " + Sensores[i].getTipo() + ". Valor: " + Sensores[i].getValor();
             texto = texto + mensaje;
         }
         return texto;
     }
 
-    public static String toStringSensores666(ArrayList<Sensor> sensores666){
+    public static String toStringSensores666(Sensor[] sensores666){
         String texto = "";
-        for(int i = 0; i < sensores666.size(); i++){
-            String mensaje = " ----- Tipo: " + sensores666.get(i).getTipo() + " Valor: " + sensores666.get(i).getValor();
-            texto = texto + mensaje;
+        for(int i = 0; i < sensores666.length; i++){
+            String mensaje = " ----- Tipo: " + sensores666[i].getTipo() + " Valor: " + sensores666[i].getValor();
+            texto = texto.concat(mensaje);
         }
         return texto;
     }
 
     public static int cantidadSensores(){
-        return posAnadir + 1;
+        return posAnadir;
     }
 
-    public static void getTipoTemperatura(){
-        for(int i = 0; i < Sensores.length; i++){
+    public static String getTipoTemperatura(){
+        String texto = "";
+        for(int i = 0; i < posAnadir;  i++){
             if(Sensores[i].getTipo().toLowerCase(Locale.ROOT).equals("temperatura")){
-                Sensores[i].toString();
+                texto = texto.concat( Sensores[i].toString());
             }
         }
+        return  texto;
     }
 
-    public static ArrayList<Sensor> get666(){
-        ArrayList<Sensor> sensores666 = new ArrayList();
-
-        for(int i = 0; i < Sensores.length; i++){
+    public static Sensor[] get666(){
+        int contador = 0;
+        int contador666 = 0;
+        for(int i = 0; i < posAnadir; i++){
             if(Sensores[i].getTipo().toLowerCase(Locale.ROOT).equals("temperatura")){
-                sensores666.add(Sensores[i]);
-                for (int x = 0; x < sensores666.size(); x++) {
-                    for (int p = 0; p < sensores666.size()-x-1; p++) {
-                        if(sensores666.get(p).getValor() < sensores666.get(p+1).getValor()){
-                            Sensor tmp = sensores666.get(p+1);
-                            sensores666.add(p+1,sensores666.get(p) );
-                            sensores666.add(p, tmp);
-                        }
+                contador = contador + 1;
+            }
+        }
+
+        Sensor[] sensores666 = new Sensor[contador];
+
+        for(int i = 0; i < posAnadir; i++){
+            if(Sensores[i].getTipo().toLowerCase(Locale.ROOT).equals("temperatura")){
+
+                sensores666[contador666] = Sensores[i];
+                contador666 = contador666 +1;
+            }
+        }
+
+        if(sensores666.length > 1) {
+            for (int x = 0; x < sensores666.length; x++) {
+                for (int p = 0; p < sensores666.length - x - 1; p++) {
+                    if (sensores666[p+1].getValor() < sensores666[p].getValor()) {
+                        Sensor tmp = sensores666[p+1];
+                        sensores666[p+1] = sensores666[p];
+                        sensores666[p] = tmp;
                     }
                 }
             }

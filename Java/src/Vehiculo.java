@@ -23,7 +23,6 @@ public class Vehiculo {
         this.marca = marca;
         this.valorComercial = valorComercial;
         this.color = color;
-        vehiculos[posAnadir] = this;
     }
 
     public int getModelo() {
@@ -83,37 +82,41 @@ public class Vehiculo {
     }
 
     public String toString(){
-        String texto = "Modelo: " + this.getModelo() + " Marca: " + this.getMarca() + " Valor comercial: " + this.getValorComercial() + " Color: " + this.getColor();
+        String texto = "------Modelo: " + this.getModelo() + " Marca: " + this.getMarca() + " Valor comercial: " + this.getValorComercial() + " Color: " + this.getColor();
         return texto;
     }
 
     public static String toStringVehiculos(){
         String texto = "";
-        for(int i = 0; i < vehiculos.length; i++){
+        for(int i = 0; i < posAnadir; i++){
             String mensaje = " ----- Modelo: " + vehiculos[i].getModelo() + " Marca: " + vehiculos[i].getMarca() + " Valor comercial: " + vehiculos[i].getValorComercial() + " Color: " + vehiculos[i].getColor();
-            texto = texto + mensaje;
+            texto = texto.concat(mensaje);
         }
         return texto;
     }
 
-    public static void getVerdes(){
-        for(int i = 0; i < vehiculos.length; i++){
+    public static String getVerdes(){
+        String texto = "";
+        for(int i = 0; i < posAnadir; i++){
             if(vehiculos[i].getColor().toLowerCase(Locale.ROOT).equals("verde")){
-                vehiculos[i].toString();
+                texto = texto.concat(vehiculos[i].toString());
             }
         }
+        return texto;
     }
 
     public static int cantidadVehiculos(){
-        return posAnadir + 1;
+        return posAnadir;
     }
 
-    public static void getNuevos(){
-        for(int i = 0; i < vehiculos.length; i++){
-            if(vehiculos[i].getModelo() > 2000 && vehiculos[i].getModelo() < 2021){
-                vehiculos[i].toString();
+    public static String getNuevos(){
+        String texto = "";
+        for(int i = 0; i < posAnadir; i++){
+            if(vehiculos[i].getModelo() >= 2000 && vehiculos[i].getModelo() <= 2021){
+                texto = texto.concat(vehiculos[i].toString());
             }
         }
+        return texto;
     }
 
 }
