@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -7,26 +8,35 @@ public class Vehiculo {
     private String marca;
     private double valorComercial;
     private String color;
-    public static Vehiculo[] vehiculos = new Vehiculo[10];
-    public static int tamano = 10;
-    public static int posAnadir = 0;
+    private ArrayList<Sensor> sensores = new ArrayList<Sensor>();
+    public static int idActual = 1;
+    private int id;
+
+    public static ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 
     public Vehiculo() {
+        this.id = idActual - 1;
+        idActual ++;
+        Vehiculo.vehiculos.add(this);
     }
 
     public Vehiculo(int modelo, String marca, double valorComercial) {
         this(modelo, marca, valorComercial, "verde");
     }
 
+
     public Vehiculo(int modelo, String marca, double valorComercial, String color) {
         this.modelo = modelo;
         this.marca = marca;
         this.valorComercial = valorComercial;
         this.color = color;
+        this.id = idActual - 1;
+        idActual ++;
+        Vehiculo.vehiculos.add(this);
     }
 
     public int getModelo() {
-        return modelo;
+        return this.modelo;
     }
 
     public void setModelo(int modelo) {
@@ -34,7 +44,7 @@ public class Vehiculo {
     }
 
     public String getMarca() {
-        return marca;
+        return this.marca;
     }
 
     public void setMarca(String marca) {
@@ -42,7 +52,7 @@ public class Vehiculo {
     }
 
     public double getValorComercial() {
-        return valorComercial;
+        return this.valorComercial;
     }
 
     public void setValorComercial(double valorComercial) {
@@ -50,66 +60,90 @@ public class Vehiculo {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public static Vehiculo[] getVehiculos() {
-        return vehiculos;
+    public ArrayList<Sensor> getSensores() {
+        return this.sensores;
     }
 
-    public static void setVehiculos(Vehiculo[] vehiculos) {
-        Vehiculo.vehiculos = vehiculos;
+    public void setSensores(ArrayList<Sensor> sensores) {
+        this.sensores = sensores;
     }
 
-    public static int getTamano() {
-        return tamano;
+    public int getId() {
+        return this.id;
     }
 
-    public static void setTamano(int tamano) {
-        Vehiculo.tamano = tamano;
-    }
-
-    public static int getPosAnadir() {
-        return posAnadir;
-    }
-
-    public static void setPosAnadir() {
-        Vehiculo.posAnadir = posAnadir + 1;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String toString(){
-        String texto = "------Modelo: " + this.getModelo() + " Marca: " + this.getMarca() + " Valor comercial: " + this.getValorComercial() + " Color: " + this.getColor();
+        String texto = "\n" + "-------Id: " + this.getId() + "\n" + " Modelo: " + this.getModelo() + "\n" + " Marca: " + this.getMarca() + "\n" + " Valor comercial: " + this.getValorComercial() + "\n"  +" Color: " + this.getColor();
+        for(int i = 0; i < this.sensores.size(); i++){
+            String textoSensores = this.sensores.get(i).toString();
+            texto = texto.concat(textoSensores);
+        }
         return texto;
     }
 
     public static String toStringVehiculos(){
         String texto = "";
-        for(int i = 0; i < posAnadir; i++){
-            String mensaje = " ----- Modelo: " + vehiculos[i].getModelo() + " Marca: " + vehiculos[i].getMarca() + " Valor comercial: " + vehiculos[i].getValorComercial() + " Color: " + vehiculos[i].getColor();
-            texto = texto.concat(mensaje);
+        for(int i = 0; i < vehiculos.size(); i++){
+            String textoVehiculos = vehiculos.get(i).toString();
+            texto = texto.concat(textoVehiculos);
         }
         return texto;
     }
 
     public static String getVerdes(){
         String texto = "";
-        for(int i = 0; i < posAnadir; i++){
-            if(vehiculos[i].getColor().toLowerCase(Locale.ROOT).equals("verde")){
-                texto = texto.concat(vehiculos[i].toString());
+        for(int i = 0; i < cantidadVehiculos(); i++){
+            if(vehiculos.get(i).getColor().toLowerCase(Locale.ROOT).equals("verde")){
+                texto = texto.concat(vehiculos.get(i).toString());
             }
         }
         return texto;
     }
 
     public static int cantidadVehiculos(){
-        return posAnadir;
+        return vehiculos.size();
     }
 
-    public static String getNuevos(){
+    public int cantidadSensores(){
+        return this.sensores.size();
+    }
+
+    public void anadirSensor(Sensor sensor){
+        this.sensores.add(sensor);
+    }
+
+    public static Vehiculo obtenerVehiculoPorId(int id){
+        Vehiculo vehiculo = null;
+        for(int i = 0; i < cantidadVehiculos(); i++){
+            if(vehiculos.get(i).getId() == id){
+                vehiculo = vehiculos.get(i);
+            }
+        }
+        return vehiculo;
+    }
+
+    public static String masSensores(){
+        var mayor = vehiculos.get(0);
+        for (int i = 0; i < vehiculos.size(); i++){
+            if(vehiculos.get(i).getSensores().size() > mayor.getSensores().size()){
+               mayor = vehiculos.get(i);
+            }
+        }
+        return mayor.toString();
+    }
+
+    /*public static String getNuevos(){
         String texto = "";
         for(int i = 0; i < posAnadir; i++){
             if(vehiculos[i].getModelo() >= 2000 && vehiculos[i].getModelo() <= 2021){
@@ -117,6 +151,6 @@ public class Vehiculo {
             }
         }
         return texto;
-    }
+    }*/
 
 }

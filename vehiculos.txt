@@ -1,0 +1,5 @@
+2015,Ford,53799000,verde
+2002,Renault,25000000,rojo
+2021,Bugatti,3900000000,negro
+1995,Volskwagen,1200000,verde
+2010,Ferrari,45790000,amarillo

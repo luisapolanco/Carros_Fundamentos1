@@ -1,25 +1,31 @@
 
+n
+java:S1192Z"LDefine a constant instead of duplicating this literal "temperatura" 3 times.(¥‰™Æüÿÿÿÿ8·±ï¬Ë/
 0
 java:S1220""Move this file to a named package.
-K
-java:S1444".Make this "public static Sensores" field final(°‰ÜÌ8Ù£òÊ/
->
-java:S1643C"Use a StringBuilder instead.(ëÜøÁüÿÿÿÿ8«ğÊ/
-B
-java:S3010"%Remove this assignment of "Sensores".(Õ°ü8§âƒÊ/
-q
-java:S1104"TMake Sensores a static final constant or non-public and provide accessors if needed.(°‰ÜÌ8Ù£òÊ/
-t
-java:S1104"RMake tamano a static final constant or non-public and provide accessors if needed.(ã«šşÿÿÿÿ8çÜóÊ/
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÖÍà¬Ë/
 p
-java:S3008"SRename this field "Sensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°‰ÜÌ8Ù£òÊ/
+java:S3008"SRename this field "Sensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°‰ÜÌ8Ù£òÊ/
+o
+java:S3776a"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(é›ØÛ8·±ï¬Ë/
+q
+java:S1104"TMake Sensores a static final constant or non-public and provide accessors if needed.(°‰ÜÌ8Ù£òÊ/
 :
-java:S2386"Make this member "protected".(°‰ÜÌ8‚ÏõÊ/
-Q
-java:S1444"/Make this "public static posAnadir" field final(âÄ¶Àùÿÿÿÿ8çÜóÊ/
-w
-java:S1104"UMake posAnadir a static final constant or non-public and provide accessors if needed.(âÄ¶Àùÿÿÿÿ8çÜóÊ/
+java:S2386"Make this member "protected".(°‰ÜÌ8‚ÏõÊ/
+t
+java:S1104	"RMake tamano a static final constant or non-public and provide accessors if needed.(ã«šşÿÿÿÿ8çÜóÊ/
 
-java:S1488;"]Immediately return this expression instead of assigning it to the temporary variable "texto".(µŞØÿÿÿÿÿ8ÖøüÊ/
+java:S1488="]Immediately return this expression instead of assigning it to the temporary variable "texto".(Õ‡©¢ûÿÿÿÿ8ÖøüÊ/
 N
-java:S1444",Make this "public static tamano" field final(ã«šşÿÿÿÿ8çÜóÊ/
+java:S1444	",Make this "public static tamano" field final(ã«šşÿÿÿÿ8çÜóÊ/
+K
+java:S1444".Make this "public static Sensores" field final(°‰ÜÌ8Ù£òÊ/
+>
+java:S1643E"Use a StringBuilder instead.(ëÜøÁüÿÿÿÿ8«ğÊ/
+Q
+java:S1444
+"/Make this "public static posAnadir" field final(âÄ¶Àùÿÿÿÿ8çÜóÊ/
+w
+java:S1104
+"UMake posAnadir a static final constant or non-public and provide accessors if needed.(âÄ¶Àùÿÿÿÿ8çÜóÊ/

@@ -1,23 +1,24 @@
 
-C
-java:S3010"&Remove this assignment of "vehiculos".(îùı8¶âÍÊ/
-K
-java:S1444"/Make this "public static vehiculos" field final(µŠ¹8Ã±šÊ/
-w
-java:S1104	"UMake posAnadir a static final constant or non-public and provide accessors if needed.(âÄ¶Àùÿÿÿÿ8Ã±šÊ/
 o
-java:S1104"RMake tamano a static final constant or non-public and provide accessors if needed.(ÃšßÑ8Ã±šÊ/
-q
-java:S1104"UMake vehiculos a static final constant or non-public and provide accessors if needed.(µŠ¹8Ã±šÊ/
-I
-java:S1444",Make this "public static tamano" field final(ÃšßÑ8Ã±šÊ/
-Q
-java:S1444	"/Make this "public static posAnadir" field final(âÄ¶Àùÿÿÿÿ8Ã±šÊ/
->
-java:S1643["Use a StringBuilder instead.(ëÜøÁüÿÿÿÿ8ÖÑâÊ/
+java:S1104"RMake tamano a static final constant or non-public and provide accessors if needed.(ÃšßÑ8Ã±šÊ/
+K
+java:S1444
+"/Make this "public static vehiculos" field final(µŠ¹8Ã±šÊ/
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8´Óğ«Ê/
+
+java:S1488U"]Immediately return this expression instead of assigning it to the temporary variable "texto".(Ï¬ß¿ÿÿÿÿÿ8ø¶»Ê/
+w
+java:S1104"UMake posAnadir a static final constant or non-public and provide accessors if needed.(âÄ¶Àùÿÿÿÿ8Ã±šÊ/
+9
+java:S2386
+"Make this member "protected".(µŠ¹8•ï›Ê/
 0
 java:S1220""Move this file to a named package.
-9
-java:S2386"Make this member "protected".(µŠ¹8•ï›Ê/
-z
-java:S1488S"]Immediately return this expression instead of assigning it to the temporary variable "texto".(Üéƒ¥8ø¶»Ê/
+I
+java:S1444",Make this "public static tamano" field final(ÃšßÑ8Ã±šÊ/
+Q
+java:S1444"/Make this "public static posAnadir" field final(âÄ¶Àùÿÿÿÿ8Ã±šÊ/
+q
+java:S1104
+"UMake vehiculos a static final constant or non-public and provide accessors if needed.(µŠ¹8Ã±šÊ/
